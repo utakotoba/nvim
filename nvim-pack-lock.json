@@ -7,6 +7,10 @@
     "lz.n": {
       "rev": "7419497",
       "src": "https://github.com/lumen-oss/lz.n.git"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
     }
   }
 }

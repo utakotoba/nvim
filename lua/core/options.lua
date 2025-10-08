@@ -9,6 +9,7 @@ opt.termguicolors = true
 opt.number = true
 opt.cursorline = true
 opt.cursorlineopt = 'number'
+opt.signcolumn = 'yes'
 opt.conceallevel = 0
 opt.wrap = false
 opt.scrolloff = 12
