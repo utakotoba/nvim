@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "everforest-nvim": {
+      "rev": "d293618",
+      "src": "https://github.com/neanias/everforest-nvim.git"
+    },
+    "lz.n": {
+      "rev": "7419497",
+      "src": "https://github.com/lumen-oss/lz.n.git"
+    }
+  }
+}
