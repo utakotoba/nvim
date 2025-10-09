@@ -8,7 +8,16 @@ return {
     '.luacheckrc',
     '.stylua.toml',
     'stylua.toml',
+    'selene.toml',
+    'selene.yml',
     '.git',
   },
+  on_attach = function(client, _bufnr)
+    -- disable semantic tokens for highlighting,
+    -- since it introduces miss highlight in group:
+    -- `@lsp.typemod.variable.static.lua`,
+    -- tree-sitter only is fine.
+    client.server_capabilities.semanticTokensProvider = nil
+  end
 }
 
