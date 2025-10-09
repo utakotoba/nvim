@@ -6,6 +6,8 @@ return {
     after = function()
       require('nvim-treesitter.configs').setup({
         ensure_installed = {
+          'c',
+          'cpp',
           'lua',
           'json',
         },
