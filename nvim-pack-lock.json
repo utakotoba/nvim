@@ -4,13 +4,18 @@
       "rev": "d293618",
       "src": "https://github.com/neanias/everforest-nvim.git"
     },
+    "lspsaga.nvim": {
+      "rev": "6dc9ec1",
+      "src": "https://github.com/utakotoba/lspsaga.nvim.git"
+    },
     "lz.n": {
       "rev": "7419497",
       "src": "https://github.com/lumen-oss/lz.n.git"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
+      "rev": "3ab4f2d2",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git",
+      "version": "'main'"
     }
   }
 }

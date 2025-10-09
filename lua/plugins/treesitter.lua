@@ -1,16 +1,13 @@
 return {
   src = 'https://github.com/nvim-treesitter/nvim-treesitter.git',
+  version = 'main',
   data = {
-    lazy = true,
+    -- load tree-sitter early when opening a file from initial command
+    lazy = vim.fn.argc(-1) == 0,
     event = { 'BufRead', 'BufNewFile' },
+    cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
     after = function()
-      require('nvim-treesitter.configs').setup({
-        ensure_installed = {
-          'c',
-          'cpp',
-          'lua',
-          'json',
-        },
+      require('nvim-treesitter').setup {
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
@@ -18,7 +15,7 @@ return {
         indent = {
           enable = true,
         },
-      })
+      }
     end
   }
 }
