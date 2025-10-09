@@ -10,7 +10,8 @@
   },
   "workspace": {
     "library": [
-      "$VIMRUNTIME"
+      "$VIMRUNTIME",
+      "$HOME/.local/share/nvim/site/pack/core/opt"
     ],
     "ignoreGlobs": [
       "**/*_spec.lua"
