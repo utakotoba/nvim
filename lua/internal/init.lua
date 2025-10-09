@@ -6,18 +6,6 @@ autocmd('BufEnter', {
   once = true,
   callback = function()
     vim.schedule(function()
-      -- schedule to check if lz.n loaded,
-      -- if not, clone and load it
-      -- this is mostly used for showing the vim.pack installing
-      -- progress when first load (need optimize)
-      local pack = require('core.pack')
-
-      ---@diagnostic disable-next-line: unnecessary-if
-      if not pack.is_ok then
-        pack.init()
-        pack:load()
-      end
-
       -- load lsp
       local lsp = require('internal.lsp')
       lsp.enable()
