@@ -16,3 +16,9 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 g.loaded_python3_provider = 0
 
+-- vim.o group
+local o = vim.o
+
+-- reserve space in winbar to avoid layout shift
+o.winbar = ' '
+
