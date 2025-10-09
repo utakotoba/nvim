@@ -132,6 +132,7 @@ end
 function M.ensure_lzn()
   -- set background to transparent first to avoid buggy visual feeling
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+  vim.api.nvim_set_hl(0, 'WinBar', { bg = 'NONE' })
 
   vim.pack.add({
     'https://github.com/lumen-oss/lz.n.git'

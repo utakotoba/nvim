@@ -5,11 +5,13 @@ return {
     lazy = true,
     event = 'LspAttach',
     after = function()
-      require('blink.cmp').setup({
-        keymap = {
-          preset = 'super-tab',
-        },
-      })
+      vim.schedule(function()  
+        require('blink.cmp').setup({
+          keymap = {
+            preset = 'super-tab',
+          },
+        })
+      end)
     end
   }
 }
