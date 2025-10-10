@@ -6,9 +6,6 @@ autocmd('BufEnter', {
   once = true,
   callback = function()
     vim.schedule(function()
-      -- disable built-in regex syntax
-      vim.cmd [[syntax off]]
-
       -- load lsp
       local lsp = require('internal.lsp')
       lsp.enable()

@@ -1,4 +1,3 @@
-local func = require("vim.func")
 --- List of language parsers should be always installed
 --- @type string[] list of parser names
 local ensure_installed = {
@@ -52,16 +51,28 @@ return {
 
       -- features setup
       vim.api.nvim_create_autocmd('FileType', {
-        callback = function()
+        callback = function(args)
           vim.schedule(function()
-            -- start highlighting
-            vim.treesitter.start()
+            local ok = pcall(function()
+              local _ = vim.treesitter.get_parser(0, args.match) 
+            end)
 
-            -- start folds
-            vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            if ok then
+              -- start highlighting
+              vim.treesitter.start()
 
-            -- start indentation
-            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+              -- start folds
+              vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
+              -- start indentation
+              vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+              -- disable built-in regex syntax
+              vim.cmd [[syntax off]]
+            else
+              -- enable built-in regex syntax as fallback
+              vim.cmd [[syntax on]]
+            end
           end)
         end
       })
