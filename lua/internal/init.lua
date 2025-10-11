@@ -14,6 +14,7 @@ autocmd('BufEnter', {
       -- load keymap
       local keymap = require('keymap')
       keymap.base()
+      keymap.tooling()
     end)
   end
 })

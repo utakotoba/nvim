@@ -6,11 +6,11 @@ return {
     event = 'LspAttach',
     after = function()
       vim.schedule(function()  
-        require('blink.cmp').setup({
+        require 'blink.cmp'.setup {
           keymap = {
             preset = 'super-tab',
           },
-        })
+        }
       end)
     end
   }

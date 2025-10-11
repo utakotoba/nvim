@@ -28,10 +28,29 @@ function M.base()
   map('n', '<A-k>', ex('execute "move .-" . (v:count1 + 1)') .. '==', { desc = 'Move Lines Up' })
   map('n', '<A-j>', ex('execute "move .+" . v:count1') .. '==', { desc = 'Move Lines Down' })
 
+  -- window control
+  map('n', '<C-k>', '<C-w>k', { desc = 'Move Window To Up', remap = true })
+  map('n', '<C-j>', '<C-w>j', { desc = 'Move Window To Down', remap = true })
+  map('n', '<C-h>', '<C-w>h', { desc = 'Move Window to Left', remap = true })
+  map('n', '<C-l>', '<C-w>l', { desc = 'Move Window To Right', remap = true })
+
   -- buffer operation
   map('n', 'W', ex('w'), { desc = 'Write File' })
   map('n', 'Q', ex('q'), { desc = 'Quit Neovim' })
   map('n', 'B', ex('bd'), { desc = 'Delete Current Buffer' })
+
+  -- misc
+  map('n', '<leader><CR>', ex('noh'), { desc = 'Hide Highlight Temporarily' })
+end
+
+function M.tooling()
+  -- fzf-lua
+  map('n', '<leader>f', ex('FzfLua files'), { desc = 'Use Fzf To Open A File' })
+  map('n', '<leader>m', ex('FzfLua buffers'), { desc = 'Use Fzf To List Opened Buffer' })
+  map('n', '<leader>g', ex('FzfLua lgrep_curbuf'), { desc = 'Use Fzf To Grep Current Buffer' })
+  map('n', '<leader>\\', ex('FzfLua live_grep'), { desc = 'Use Fzf To Grep Projects' })
+  map('n', '<leader>hh', ex('FzfLua helptags'), { desc = 'Use Fzf To Search Help Tags' })
+
 end
 
 return M

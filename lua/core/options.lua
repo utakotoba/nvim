@@ -16,6 +16,7 @@ opt.scrolloff = 12
 opt.sidescrolloff = 8
 opt.pumblend = 12
 opt.winblend = 32
+opt.splitright = true
 opt.list = true
 opt.listchars = {}
 opt.fillchars = {}
