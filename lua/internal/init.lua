@@ -10,6 +10,10 @@ autocmd('BufEnter', {
       local lsp = require('internal.lsp')
       lsp.enable()
       lsp.apply_diagnostic_config()
+
+      -- load keymap
+      local keymap = require('keymap')
+      keymap.base()
     end)
   end
 })
