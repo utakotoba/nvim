@@ -21,6 +21,11 @@ return {
             ['ctrl-a'] = FzfLua.actions.file_tabedit,
           },
         },
+        lsp = {
+          symbols = {
+            symbol_icons = _G.lsp_icons,
+          },
+        },
       }
     end
   },

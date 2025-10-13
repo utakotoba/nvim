@@ -1,34 +1,6 @@
 --- @diagnostic disable: assign-type-mismatch
 --- @diagnostic disable: missing-fields
 
-local icons = {
-  Text = ' 󰉿 ',
-  Method = ' 󰆧 ',
-  Function = ' 󰡱 ',
-  Constructor = '  ',
-  Field = '  ',
-  Variable = '  ',
-  Class = ' 󰠱 ',
-  Interface = '  ',
-  Module = '  ',
-  Property = ' 󰜢 ',
-  Unit = ' 󰑭 ',
-  Value = ' 󰎠 ',
-  Enum = '  ',
-  Keyword = ' 󰌋 ',
-  Snippet = '  ',
-  Color = ' 󰏘 ',
-  File = ' 󰈙 ',
-  Reference = ' 󰍎 ',
-  Folder = ' 󰉋 ',
-  EnumMember = '  ',
-  Constant = ' 󰏿 ',
-  Struct = ' 󰙅 ',
-  Event = '  ',
-  Operator = ' 󰆕 ',
-  TypeParameter = ' 󰅲 ',
-}
-
 --- @type vim.pack.Spec
 return {
   src = 'https://github.com/Saghen/blink.cmp.git',
@@ -67,13 +39,13 @@ return {
           },
         },
         appearance = {
-          kind_icons = icons,
+          kind_icons = _G.lsp_icons,
         },
         completion = {
           menu = {
             winblend = 4,
             draw = {
-              columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 2 }, { 'kind' } },
+              columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 1 }, { 'kind' } },
             },
           },
           documentation = {
