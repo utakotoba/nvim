@@ -48,9 +48,18 @@ function M.tooling()
   map('n', '<leader>f', ex('FzfLua files'), { desc = 'Use Fzf To Open A File' })
   map('n', '<leader>m', ex('FzfLua buffers'), { desc = 'Use Fzf To List Opened Buffer' })
   map('n', '<leader>g', ex('FzfLua lgrep_curbuf'), { desc = 'Use Fzf To Grep Current Buffer' })
-  map('n', '<leader>\\', ex('FzfLua live_grep'), { desc = 'Use Fzf To Grep Projects' })
+  map('n', '<leader>\\', ex('FzfLua live_grep'), { desc = 'Use Fzf To Grep Project' })
   map('n', '<leader>hh', ex('FzfLua helptags'), { desc = 'Use Fzf To Search Help Tags' })
 
+  -- lsp
+  map('n', '<localleader>r', ex('FzfLua lsp_references'), { desc = 'Lsp Show References' })
+  map('n', '<localleader>d', ex('FzfLua lsp_definitions'), { desc = 'Lsp Show Definitions' })
+  map('n', '<localleader>c', ex('FzfLua lsp_declarations'), { desc = 'Lsp Show Declaration' })
+  map('n', '<localleader>t', ex('FzfLua lsp_typedefs'), { desc = 'Lsp Show Type Definitions' })
+  map('n', '<localleader>s', ex('FzfLua lsp_implementations'), { desc = 'Lsp Show Implementations' })
+  map('n', '<localleader>ic', ex('FzfLua lsp_incoming_calls'), { desc = 'Lsp Show Incoming Calls' })
+  map('n', '<localleader>oc', ex('FzfLua lsp_outgoing_calls'), { desc = 'Lsp Show Outgoing Calls' })
+  map('n', '<localleader>e', ex('lua vim.lsp.buf.rename()'), { desc = 'Lsp Rename', noremap = true })
 end
 
 return M

@@ -5,6 +5,7 @@ local ensure_installed = {
   'cpp',
   'lua',
   'json',
+  'go',
 }
 
 --- Ensure all language parsers in given list installed
