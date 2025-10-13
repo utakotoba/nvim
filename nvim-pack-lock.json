@@ -13,6 +13,10 @@
       "rev": "db3ccff",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
+    "indentmini.nvim": {
+      "rev": "e0f1e38",
+      "src": "https://github.com/nvimdev/indentmini.nvim.git"
+    },
     "lspsaga.nvim": {
       "rev": "6dc9ec1",
       "src": "https://github.com/utakotoba/lspsaga.nvim.git"

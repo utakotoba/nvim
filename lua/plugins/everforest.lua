@@ -23,6 +23,10 @@ return {
           hl.BlinkCmpLabelDescription = { fg = palette.grey0 }
           hl.BlinkCmpDoc = { fg = palette.fg, bg = palette.bg1 }
           hl.BlinkCmpSignatureHelp = { fg = palette.fg, bg = palette.bg1 }
+
+          -- colorscheme for indentmini
+          hl.IndentLine = { fg = palette.bg1 }
+          hl.IndentLineCurrent = { fg = palette.grey0 }
         end
       }
 
