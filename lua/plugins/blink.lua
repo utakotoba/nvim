@@ -59,32 +59,50 @@ return {
           ['<CR>'] = {
             'accept',
             'fallback',
-          }
+          },
+          ['<C-s>'] = {
+            'show_signature',
+            'hide_signature',
+            'fallback',
+          },
         },
         appearance = {
           kind_icons = icons,
         },
         completion = {
           menu = {
+            winblend = 4,
             draw = {
-              columns = { { 'kind_icon' }, { 'label', 'label_description' }, { 'kind' } },
+              columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 2 }, { 'kind' } },
             },
           },
           documentation = {
             auto_show = true,
             auto_show_delay_ms = 0,
             treesitter_highlighting = true,
+            window = {
+              winblend = 4,
+            },
           },
           list = { selection = { preselect = true, auto_insert = true } },
           accept = { auto_brackets = { enabled = true } },
           ghost_text = { enabled = true },
         },
+        signature = {
+          enabled = true,
+          trigger = {
+            show_on_accept = true,
+            show_on_insert = true,
+          },
+          window = {
+            winblend = 4,
+          },
+        },
         sources = { default = { 'snippets', 'lsp', 'path', 'buffer' } },
-        cmdline = {},
-        signature = { window = { border = 'rounded' } },
       }
 
-      vim.schedule(function() 
+      vim.schedule(function()
+        --- @diagnostic disable-next-line: undefined-field, redundant-parameter
         require 'blink.cmp'.setup(opts)
       end)
     end
