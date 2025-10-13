@@ -17,22 +17,14 @@
       "rev": "e0f1e38",
       "src": "https://github.com/nvimdev/indentmini.nvim.git"
     },
-    "lspsaga.nvim": {
-      "rev": "6dc9ec1",
-      "src": "https://github.com/utakotoba/lspsaga.nvim.git"
-    },
     "lz.n": {
-      "rev": "7419497",
+      "rev": "f1a9dd3",
       "src": "https://github.com/lumen-oss/lz.n.git"
     },
     "nvim-treesitter": {
-      "rev": "3ab4f2d2",
+      "rev": "0606c7a9",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter.git",
       "version": "'main'"
-    },
-    "nvim-treesitter-context": {
-      "rev": "41847d3",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context.git"
     }
   }
 }
