@@ -70,6 +70,17 @@ return {
             winblend = 4,
           },
         },
+        cmdline = {
+          keymap = {
+            ['<Tab>'] = { 'show', 'accept' },
+            ['<C-k>'] = { 'select_prev', 'fallback' },
+            ['<C-j>'] = { 'select_next', 'fallback' },
+            ['<C-e>'] = { 'cancel', 'fallback' },
+          },
+          completion = {
+            menu = { auto_show = true },
+          },
+        },
         sources = { default = { 'snippets', 'lsp', 'path', 'buffer' } },
       }
 
