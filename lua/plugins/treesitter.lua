@@ -54,14 +54,10 @@ return {
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
           vim.schedule(function()
-            local ok = pcall(function()
-              local _ = vim.treesitter.get_parser(0, args.match) 
-            end)
+            -- start highlight
+            local ok = pcall(vim.treesitter.start, 0, args.match)
 
             if ok then
-              -- start highlighting
-              vim.treesitter.start()
-
               -- start folds
               vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 

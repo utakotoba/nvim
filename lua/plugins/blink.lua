@@ -28,10 +28,6 @@ return {
             'accept',
             'fallback'
           },
-          ['<CR>'] = {
-            'accept',
-            'fallback',
-          },
           ['<C-s>'] = {
             'show_signature',
             'hide_signature',
@@ -64,10 +60,10 @@ return {
           enabled = true,
           trigger = {
             show_on_accept = true,
-            show_on_insert = true,
           },
           window = {
             winblend = 4,
+            direction_priority = { 's', 'n' },
           },
         },
         cmdline = {
@@ -78,10 +74,15 @@ return {
             ['<C-e>'] = { 'cancel', 'fallback' },
           },
           completion = {
-            menu = { auto_show = true },
+            menu = {
+              auto_show = true,
+              draw = {
+                columns = { { 'kind_icon' }, { 'label' } },
+              },
+            },
           },
         },
-        sources = { default = { 'snippets', 'lsp', 'path', 'buffer' } },
+        sources = { default = { 'snippets', 'lsp', 'path', 'buffer', 'cmdline' } },
       }
 
       vim.schedule(function()
