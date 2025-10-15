@@ -41,6 +41,10 @@
       "rev": "b9aada8",
       "src": "https://github.com/nvim-mini/mini.pairs.git"
     },
+    "mini.splitjoin": {
+      "rev": "b0d57bb",
+      "src": "https://github.com/nvim-mini/mini.splitjoin.git"
+    },
     "mini.surround": {
       "rev": "444e155",
       "src": "https://github.com/nvim-mini/mini.surround.git"

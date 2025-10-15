@@ -1,6 +1,16 @@
 local autocmd = vim.api.nvim_create_autocmd
 local group = vim.api.nvim_create_augroup('MixtapeGroup', {})
 
+autocmd('BufWinEnter', {
+  group = group,
+  once = true,
+  callback = function()
+    -- load statusline
+    local stl = require 'internal.stl'
+    stl.load()
+  end,
+})
+
 autocmd('BufEnter', {
   group = group,
   once = true,
