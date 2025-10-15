@@ -63,10 +63,4 @@ function M.fzf()
   })
 end
 
-function M.oil()
-  map('n', '<leader>-', '<Cmd>Oil<CR>', {
-    desc = 'Open Parent Directory',
-  })
-end
-
 return M
