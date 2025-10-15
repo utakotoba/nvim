@@ -18,6 +18,7 @@ opt.pumblend = 12
 opt.winblend = 32
 opt.splitright = true
 opt.list = true
+opt.cmdheight = 0
 opt.listchars = {}
 opt.fillchars = {}
 

@@ -6,7 +6,8 @@ local ensure_installed = {
   'lua',
   'json',
   'go',
-  'python',
+  'toml',
+  'bash',
 }
 
 --- Ensure all language parsers in given list installed
