@@ -7,23 +7,22 @@ autocmd('BufEnter', {
   callback = function()
     vim.schedule(function()
       -- load lsp
-      local lsp = require('internal.lsp')
+      local lsp = require 'internal.lsp'
       lsp.enable()
       lsp.apply_diagnostic_config()
 
       -- load keymap
-      local base_keymap = require('maps.base')
+      local base_keymap = require 'maps.base'
       base_keymap.control()
       base_keymap.window_control()
       base_keymap.base_movement()
 
-      local tools_keymap = require('maps.tools')
+      local tools_keymap = require 'maps.tools'
       tools_keymap.fzf()
       tools_keymap.oil()
 
-      local development_keymap = require('maps.development')
+      local development_keymap = require 'maps.development'
       development_keymap.lsp()
     end)
-  end
+  end,
 })
-

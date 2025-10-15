@@ -52,4 +52,3 @@ opt.ttyfast = true
 opt.updatetime = 100
 opt.lazyredraw = true
 opt.redrawtime = 1500
-

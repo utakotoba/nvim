@@ -8,7 +8,6 @@ return {
     after = function()
       --- @diagnostic disable-next-line: undefined-field
       require('indentmini').setup()
-    end
+    end,
   },
 }
-

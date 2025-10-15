@@ -3,7 +3,7 @@ local M = {}
 function M.enable()
   local server_list = {}
 
-  local config_path = vim.fn.stdpath('config') .. '/lsp'
+  local config_path = vim.fn.stdpath 'config' .. '/lsp'
   local config_files = vim.fn.globpath(config_path, '*.lua', false, true)
 
   for _, filepath in ipairs(config_files) do
@@ -20,14 +20,13 @@ function M.enable()
 end
 
 function M.apply_diagnostic_config()
-  vim.diagnostic.config({
+  vim.diagnostic.config {
     virtual_text = {
       source = 'if_many',
       prefix = ' ',
       spacing = 0,
-    }
-  })
+    },
+  }
 end
 
 return M
-

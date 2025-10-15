@@ -26,7 +26,7 @@ return {
           },
           ['<Tab>'] = {
             'accept',
-            'fallback'
+            'fallback',
           },
           ['<C-s>'] = {
             'show_signature',
@@ -41,7 +41,11 @@ return {
           menu = {
             winblend = 4,
             draw = {
-              columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 1 }, { 'kind' } },
+              columns = {
+                { 'kind_icon' },
+                { 'label', 'label_description', gap = 1 },
+                { 'kind' },
+              },
             },
           },
           documentation = {
@@ -82,14 +86,15 @@ return {
             },
           },
         },
-        sources = { default = { 'snippets', 'lsp', 'path', 'buffer', 'cmdline' } },
+        sources = {
+          default = { 'snippets', 'lsp', 'path', 'buffer', 'cmdline' },
+        },
       }
 
       vim.schedule(function()
         --- @diagnostic disable-next-line: undefined-field, redundant-parameter
-        require 'blink.cmp'.setup(opts)
+        require('blink.cmp').setup(opts)
       end)
-    end
-  }
+    end,
+  },
 }
-

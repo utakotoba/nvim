@@ -18,6 +18,5 @@ return {
     -- `@lsp.typemod.variable.static.lua`,
     -- tree-sitter only is fine.
     client.server_capabilities.semanticTokensProvider = nil
-  end
+  end,
 }
-

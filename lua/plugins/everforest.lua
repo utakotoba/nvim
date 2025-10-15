@@ -27,15 +27,14 @@ return {
           -- colorscheme for indentmini
           hl.IndentLine = { fg = palette.bg1 }
           hl.IndentLineCurrent = { fg = palette.grey0 }
-        end
+        end,
       }
 
       -- modify theme settings
       require('everforest').setup(opts)
 
       -- apply colorscheme immediately to prevent flashing
-      vim.cmd.colorscheme('everforest')
+      vim.cmd.colorscheme 'everforest'
     end,
-  }
+  },
 }
-

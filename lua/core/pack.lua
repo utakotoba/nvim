@@ -9,13 +9,13 @@ local function get_plugin_name(spec)
   end
 
   local src = type(spec) == 'string' and spec or spec.src
-  return src:match('([^/]+)%.git$') or src:match('([^/]+)$')
+  return src:match '([^/]+)%.git$' or src:match '([^/]+)$'
 end
 
 --- Get the vim.pack managed package path
 --- @return string Path string to pack dir
 local function get_pack_dir()
-  local data_path = vim.fn.stdpath('data')
+  local data_path = vim.fn.stdpath 'data'
   --- @diagnostic disable-next-line: param-type-not-match
   return vim.fs.joinpath(data_path, 'site', 'pack', 'core', 'opt')
 end
@@ -23,7 +23,7 @@ end
 --- Scan vim.pack installation directory to get installed plugins list
 --- @return table<string, boolean> Table of installed plugins found on local disk
 local function scan_installed_plugins()
-  local pack_dir = get_pack_dir() 
+  local pack_dir = get_pack_dir()
 
   --- @type table<string, boolean>
   local installed_plugins = {}
@@ -40,7 +40,9 @@ local function scan_installed_plugins()
 
   while true do
     local name, type = vim.uv.fs_scandir_next(handle)
-    if not name then break end
+    if not name then
+      break
+    end
 
     if type == 'directory' and name ~= 'lz.n' then
       installed_plugins[name] = true
@@ -80,7 +82,7 @@ end
 function M.load_plugins(specs)
   if #specs > 0 then
     vim.pack.add(specs, {
-      load = require('lz.n').load
+      load = require('lz.n').load,
     })
   end
 end
@@ -116,15 +118,15 @@ function M.defer_load_plugins(specs)
               string.format('Finished in %d ms, restart!', install_time),
               vim.log.levels.INFO
             )
-            
+
             vim.wait(750)
-            
+
             -- call neovim built-in restart to make sure event triggering
             vim.cmd.restart()
           end, 200)
         end)
       end, 150)
-    end
+    end,
   })
 end
 
@@ -135,25 +137,21 @@ function M.ensure_lzn()
   vim.api.nvim_set_hl(0, 'WinBar', { bg = 'NONE' })
 
   vim.pack.add({
-    'https://github.com/lumen-oss/lz.n.git'
+    'https://github.com/lumen-oss/lz.n.git',
   }, {
     -- automatically install before ui loading (very early)
-    confirm = false
+    confirm = false,
   })
 end
 
 --- Register pack's related user command
 function M.register_commands()
   -- update command
-  vim.api.nvim_create_user_command(
-    'UpdatePlugins',
-    function()
-      vim.pack.update()
-    end,
-    {
-      desc = 'Update all plugins via vim.pack',
-    }
-  )
+  vim.api.nvim_create_user_command('UpdatePlugins', function()
+    vim.pack.update()
+  end, {
+    desc = 'Update all plugins via vim.pack',
+  })
 end
 
 --- Load plugins using given specs with auto missing installation
@@ -161,7 +159,7 @@ end
 function M.load(specs)
   M.ensure_lzn()
 
-  local installed_specs, missing_specs = M.check(specs) 
+  local installed_specs, missing_specs = M.check(specs)
 
   -- load local installed plugins first
   if #installed_specs > 0 then
@@ -177,4 +175,3 @@ function M.load(specs)
 end
 
 return M
-

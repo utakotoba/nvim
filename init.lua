@@ -9,8 +9,7 @@ vim.go.loadplugins = false
 vim.loader.enable()
 
 -- setup globals, options and plugins
-require('core')
+require 'core'
 
 -- call internal setup
-require('internal')
-
+require 'internal'

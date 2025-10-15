@@ -7,7 +7,6 @@ return {
     event = 'InsertEnter',
     after = function()
       require('mini.surround').setup()
-    end
-  }
+    end,
+  },
 }
-

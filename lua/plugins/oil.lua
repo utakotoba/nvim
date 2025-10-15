@@ -16,11 +16,10 @@ return {
         keymaps = {
           ['<C-o>'] = { 'actions.select', opts = { vertical = true } },
           ['<C-p'] = { 'actions.select', opts = { horizontal = true } },
-        }
+        },
       }
 
       require('oil').setup(opts)
-    end
-  }
+    end,
+  },
 }
-

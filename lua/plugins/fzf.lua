@@ -6,7 +6,7 @@ return {
     lazy = true,
     cmd = 'FzfLua',
     after = function()
-      require 'fzf-lua'.setup {
+      require('fzf-lua').setup {
         winopts = {
           backdrop = 36,
           preview = {
@@ -29,7 +29,6 @@ return {
           },
         },
       }
-    end
+    end,
   },
 }
-

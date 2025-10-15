@@ -11,7 +11,7 @@ local ensure_installed = {
 --- Ensure all language parsers in given list installed
 --- @param parsers string[] List of parsers will be installed
 local function ensure_parsers(parsers)
-  local TS = require('nvim-treesitter')
+  local TS = require 'nvim-treesitter'
 
   --- @type string[]
   local current_installed = TS.get_installed()
@@ -24,7 +24,7 @@ local function ensure_parsers(parsers)
 
   -- get list of parsers need to install
   local filtered = vim.tbl_filter(function(item)
-    return not installed_lookup[item] 
+    return not installed_lookup[item]
   end, parsers)
 
   TS.install(filtered)
@@ -37,7 +37,7 @@ return {
     -- load tree-sitter early when opening a file from initial command
     lazy = vim.fn.argc(-1) == 0,
     event = { 'BufRead', 'BufNewFile' },
-    cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+    cmd = { 'TSUpdate', 'TSInstall', 'TSLog', 'TSUninstall' },
     after = function()
       -- startup checking
       vim.api.nvim_create_autocmd('UIEnter', {
@@ -47,7 +47,7 @@ return {
             -- install missing parser
             ensure_parsers(ensure_installed)
           end)
-        end
+        end,
       })
 
       -- features setup
@@ -71,9 +71,8 @@ return {
               vim.cmd [[syntax on]]
             end
           end)
-        end
+        end,
       })
     end,
   },
 }
-

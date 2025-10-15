@@ -1,6 +1,6 @@
 -- setup core configuration
-require('core.globals')
-require('core.options')
+require 'core.globals'
+require 'core.options'
 
 -- setup plugin manager
 
@@ -9,7 +9,7 @@ require('core.options')
 local function gather_plugin_spces()
   local specs = {}
 
-  local target_path = vim.fn.stdpath('config') .. '/lua/plugins'
+  local target_path = vim.fn.stdpath 'config' .. '/lua/plugins'
 
   if not vim.uv.fs_stat(target_path) then
     return specs
@@ -22,7 +22,7 @@ local function gather_plugin_spces()
     local filename = vim.fn.fnamemodify(filepath, ':t:r')
 
     local module_name = 'plugins.' .. filename
-    
+
     -- assume that all specs in `vim.pack.Spec` type
     local ok, spec = pcall(require, module_name)
 
@@ -40,4 +40,3 @@ local function gather_plugin_spces()
 end
 
 require('core.pack').load(gather_plugin_spces())
-

@@ -44,4 +44,3 @@ _G.lsp_icons = {
   Operator = ' 󰆕 ',
   TypeParameter = ' 󰅲 ',
 }
-
