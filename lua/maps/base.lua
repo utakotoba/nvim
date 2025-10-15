@@ -108,6 +108,11 @@ function M.control()
     desc = 'Copy Current Buffer Into System Clipboard', silent = true
   })
 
+  -- common editing
+  map('x', 'Y', '"+y', {
+    desc = 'Copy Current Selection'
+  })
+
   -- keep focus
   map('n', '<leader><CR>', '<Cmd>noh<CR>', {
     desc = 'Hide Highlight Temporarily', silent = true

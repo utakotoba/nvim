@@ -45,6 +45,14 @@
       "rev": "0606c7a9",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter.git",
       "version": "'main'"
+    },
+    "oil.nvim": {
+      "rev": "200df01",
+      "src": "https://github.com/stevearc/oil.nvim.git"
+    },
+    "yazi.nvim": {
+      "rev": "84fa726",
+      "src": "https://github.com/mikavilpas/yazi.nvim.git"
     }
   }
 }

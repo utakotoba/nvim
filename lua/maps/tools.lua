@@ -55,6 +55,18 @@ function M.fzf()
   map('n', '<leader>cs', '<Cmd>FzfLua colorschemes<CR>', {
     desc = 'Show Colorschemes Selector'
   })
+  map('n', '<leader>qf', '<Cmd>FzfLua quickfix<CR>', {
+    desc = 'Show Quickfix List'
+  })
+  map('n', '<leader>ll', '<Cmd>FzfLua loclist<CR>', {
+    desc = 'Show Loc List'
+  })
+end
+
+function M.oil()
+  map('n', '<leader>-', '<Cmd>Oil<CR>', {
+    desc = 'Open Parent Directory'
+  })
 end
 
 return M

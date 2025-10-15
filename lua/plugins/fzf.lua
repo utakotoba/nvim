@@ -19,6 +19,8 @@ return {
             ['ctrl-o'] = FzfLua.actions.file_vsplit,
             ['ctrl-p'] = FzfLua.actions.file_split,
             ['ctrl-a'] = FzfLua.actions.file_tabedit,
+            ['alt-l'] = FzfLua.actions.file_sel_to_qf,
+            ['alt-L'] = FzfLua.actions.file_sel_to_ll,
           },
         },
         lsp = {

@@ -19,6 +19,7 @@ autocmd('BufEnter', {
 
       local tools_keymap = require('maps.tools')
       tools_keymap.fzf()
+      tools_keymap.oil()
 
       local development_keymap = require('maps.development')
       development_keymap.lsp()

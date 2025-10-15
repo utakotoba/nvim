@@ -4,7 +4,7 @@ return {
   --- @type lz.n.Spec
   data = {
     lazy = true,
-    event = 'BufEnter',
+    event = 'InsertEnter',
     after = function()
       require('mini.ai').setup()
     end
