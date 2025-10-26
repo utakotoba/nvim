@@ -3,11 +3,13 @@
 local ensure_installed = {
   'c',
   'cpp',
+  'go',
   'lua',
   'json',
-  'go',
   'toml',
   'bash',
+  'markdown',
+  'markdown-inline',
 }
 
 --- Ensure all language parsers in given list installed

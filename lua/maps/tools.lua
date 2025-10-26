@@ -25,9 +25,6 @@ function M.fzf()
   map('n', '<leader>F', '<Cmd>FzfLua live_grep_native<CR>', {
     desc = 'Use Fzf To Grep Opened Working Directory',
   })
-  map('n', '<leader>gc', '<Cmd>FzfLua grep_cword<CR>', {
-    desc = 'Use Fzf To Grep Current Word',
-  })
 
   -- grep something in visual mode
   map('x', '<leader>g', '<Cmd>FzfLua grep_visual<CR>', {

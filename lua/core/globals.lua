@@ -44,3 +44,23 @@ _G.lsp_icons = {
   Operator = ' 󰆕 ',
   TypeParameter = ' 󰅲 ',
 }
+
+-- neovide-specified
+if g.neovide then
+  -- window related configurations
+  g.neovide_opacity = 1
+  g.neovide_normal_opacity = 0.88
+  g.transparency = 0.88
+  g.neovide_window_blurred = true
+  g.neovide_show_border = true
+
+  -- window padding
+  g.neovide_padding_top = 28
+  g.neovide_padding_bottom = 12
+  g.neovide_padding_left = 16
+  g.neovide_padding_right = 16
+
+  -- animation settings
+  g.neovide_position_animation_length = 0.25
+  g.neovide_scroll_animation_far_lines = 999
+end
